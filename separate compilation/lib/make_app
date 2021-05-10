@@ -1,0 +1,4 @@
+all:
+	make -f make_lib
+	riscv64-unknown-elf-gcc -march=rv64iac -mabi=lp64 main.c libgray.a -o main
+	rm -f *.o *.a $

@@ -1,0 +1,12 @@
+all: libgray
+
+libgray: pow2.o grayCode.o
+	$(AR) -rsc libgray.a pow2.o grayCode.o
+pow2.o: pow2.c
+	$(CC) $(CFLAGS) -c pow2.c -o pow2.o
+
+grayCode.o: grayCode.c
+	$(CC) $(CFLAGS) -c grayCode.c -o grayCode.o
+
+clean:
+	rm -f *.o *.a
